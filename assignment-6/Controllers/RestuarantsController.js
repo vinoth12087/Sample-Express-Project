@@ -51,6 +51,13 @@ exports.filter = async (req, res) => {
             cost : {$lte: hcost, $gte : lcost}
         }
     }
+    if(mealtype_id && cuisine_id && hcost && lcost){
+        payload = {
+            mealtype_id: {$elemMatch: { mealtype: mealtype_id}},
+            cost : {$lte: hcost, $gte : lcost},
+            cuisine_id: {$elemMatch: { cuisine: cuisine_id}},
+        }
+    }
     if(mealtype_id && location_id && cuisine_id){
         payload = {
             mealtype_id: {$elemMatch: { mealtype: mealtype_id}},
