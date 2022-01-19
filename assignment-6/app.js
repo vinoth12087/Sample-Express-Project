@@ -6,7 +6,7 @@ const routes = require('./Routers/index');
 const host = "localhost";
 const port = 8900;
 
-const uri = "mongodb+srv://client:client2021@cluster0.40etm.mongodb.net/DB-1?retryWrites=true&w=majority";
+const uri = "MONGODB URL";
 
 const app = express();
 app.use(express.json());
